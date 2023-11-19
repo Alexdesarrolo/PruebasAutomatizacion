@@ -1,0 +1,24 @@
+
+PUT http://localhost:8080/estudiantes/1
+Content-Type: application/json
+
+{
+  "nombre": "Pppp",
+  "apellido": "Gue",
+  "edad": 30  
+}
+
+###
+http://localhost:8080/estudiantes
+
+###
+POST http://localhost:8080/estudiantes
+Content-Type: application/json
+
+{
+  "nombre": "Pppp",
+  "apellido": "Gue",
+  "edad": 30  
+}
+
+ 

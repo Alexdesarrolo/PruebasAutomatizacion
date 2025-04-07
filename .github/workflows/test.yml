@@ -17,4 +17,4 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Ejecutar pruebas
-        run: ./mvn test
+        run: mvn test

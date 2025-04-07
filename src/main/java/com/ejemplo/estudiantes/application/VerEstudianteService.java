@@ -1,5 +1,6 @@
 package com.ejemplo.estudiantes.application;
 
+import com.ejemplo.estudiantes.application.mapper.EstudianteMapper;
 import com.ejemplo.estudiantes.domain.Estudiante;
 import com.ejemplo.estudiantes.infrastructure.repository.EstudianteRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +14,7 @@ import java.util.stream.Collectors;
 public class VerEstudianteService {
 
     private final EstudianteRepository estudianteRepository;
+    private final EstudianteMapper mapper;
 
     public List<Estudiante> obtenerEstudiantes() {
         return estudianteRepository.findAll().stream()
@@ -35,6 +37,6 @@ public class VerEstudianteService {
                             .nombre(estudianteEntity.getNombre())
                             .apellido(estudianteEntity.getApellido())
                             .build())
-                .orElseThrow(() -> new RuntimeException("Usuario no existe"));
+                .orElse(null);
     }
 }

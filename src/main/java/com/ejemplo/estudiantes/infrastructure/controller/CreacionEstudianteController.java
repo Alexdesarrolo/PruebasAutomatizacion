@@ -4,6 +4,9 @@ import com.ejemplo.estudiantes.application.CreacionEstudianteService;
 import com.ejemplo.estudiantes.domain.Estudiante;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +21,9 @@ public class CreacionEstudianteController {
     private final CreacionEstudianteService creacionEstudianteService;
 
     @PostMapping
-    public Estudiante crearEstudiante(@RequestBody Estudiante estudiante) {
+    public ResponseEntity<Estudiante> crearEstudiante(@RequestBody Estudiante estudiante) {
         log.info("Se va crear un estudiante");
-        return creacionEstudianteService.crearEstudiante(estudiante);
+        Estudiante creado = creacionEstudianteService.crearEstudiante(estudiante);
+        return new ResponseEntity<Estudiante>(creado, HttpStatus.CREATED);
     }
 }

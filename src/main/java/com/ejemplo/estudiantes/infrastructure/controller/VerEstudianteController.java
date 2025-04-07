@@ -4,6 +4,8 @@ import com.ejemplo.estudiantes.application.VerEstudianteService;
 import com.ejemplo.estudiantes.domain.Estudiante;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +28,13 @@ public class VerEstudianteController {
     }
 
     @GetMapping("{id}")
-    public Estudiante obtenerEstudiante(@PathVariable("id") Long estudianteId) {
-        return verEstudianteService.obtenerEstudiante(estudianteId);
+    public ResponseEntity<Estudiante> obtenerEstudiante(@PathVariable("id") Long estudianteId) {
+        Estudiante estudiante = verEstudianteService.obtenerEstudiante(estudianteId);
+    
+    if (estudiante != null) {
+        return ResponseEntity.ok(estudiante); // 200 OK con el estudiante en el cuerpo
+    } else {
+        return ResponseEntity.notFound().build(); // 404 Not Found
+    }
     }
 }

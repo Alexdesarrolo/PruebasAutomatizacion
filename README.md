@@ -1,6 +1,17 @@
 #  Pruebas de Integración - API de Estudiantes
 
-Este proyecto contiene pruebas de integración para una API REST de gestión de estudiantes usando **Spring Boot** .
+Este proyecto incluye pruebas automatizadas para verificar que los endpoints del API funcionan correctamente. Estas pruebas aseguran que la lógica implementada cumpla con lo esperado y que el sistema sea estable ante posibles cambios futuros.
+
+# ¿Para qué sirven las pruebas?
+Las pruebas permiten:
+
+Validar que los datos se están guardando y recuperando correctamente.
+
+Confirmar que los errores se manejan de forma adecuada.
+
+Detectar fallas antes de hacer despliegues o cambios en producción.
+
+Automatizar la verificación del comportamiento del sistema.
 
 ---
 

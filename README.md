@@ -1,4 +1,4 @@
-# 🧪 Pruebas de Integración - API de Estudiantes
+#  Pruebas de Integración - API de Estudiantes
 
 Este proyecto contiene pruebas de integración para una API REST de gestión de estudiantes usando **Spring Boot** .
 
